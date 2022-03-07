@@ -1,0 +1,102 @@
+{
+    "nav-bar":{
+        "image": "src/assets/images/mi-cara.jpg"
+    },
+    "description":{
+        "title": "Full Stack Web Developer",
+        "image": "src/assets/images/mi-completo.jpeg",
+        "p":{
+            "p1": "Soy un desarrollador Full Stack con experiencia en desarrollo de aplicaciones y sitios web.",
+            "p2": "Soy una persona emprendedora y proactiva, que se emociona con los desafíos y no se rinde fácilmente. Muy organizado y autodidacta cada día, nunca dejo de aprender y tengo un especial don de comunicación interpersonal."
+        }
+    },
+    "about":{
+        "title": "Acerca de mi",
+        "studies-title": "Estudios y Trabajo",
+        "image": "src/assets/images/work.png",
+        "l": {
+            "l1": "Soy un estudiante de 4to año de Ingeniería en Sistemas de Información de la Universidad Tecnológica Nacional.",
+            "l2": "Actualmente me encuentro trabajando en una start-up extranjera, cumpliendo roles de desarrollador y product owner."
+        }  
+    },
+    "interest":{
+        "title": "Intereses Personales",
+        "image": "src/assets/images/meeting.png",
+        "l": {
+            "l1": "<b>Música:</b> Me gusta mucho el género del rock nacional e internacional además practico batería y piano.",
+            "l2": "<b>Lectura:</b> Mis géneros preferidos son la filosofía y policiales, aunque ocasionalmente suelo incluír novelas literarias e historia.",
+            "l3": "<b>Tech:</b> Me gusta aprender y poner en practica conocimientos relacionados con la Web3 y tecnologías Blockchain"
+        }  
+    },
+    "skills":{
+        "title": "Idiomas y Soft Skills",
+        "image": "src/assets/images/drumms.png",
+        "languajes": "Idiomas:",
+        "soft-skills": "Soft Skills:",
+        "lang": {
+            "l1": {
+                "title": "Español Nativo",
+                "bar-width": "width: 100%;",
+                "percent": "100%"
+            },
+            "l2": {
+                "title": "Inglés",
+                "bar-width": "width: 75%;",
+                "percent": "80%"
+            }
+        },
+        "s-skills": {
+            "l1": "Comunicación",
+            "l2": "Proactividad",
+            "l3": "Resolución de problemas",
+            "l4": "Capacidad de aceptación de críticas",
+            "l5": "Motivación"
+        }
+    },
+    "portfolio":{
+        "title": "Mi Portfolio",
+        "subtitle": "En esta sección se encuentran algunos de los últimos proyectos que he realizado.",
+        "projects": {
+            "p1": {
+                "languaje": "JavaScript / VueJS",
+                "title": "Landing Page Web Full Responsive",
+                "description": "Este proyecto fue desarrollado con el objetivo de mostrar principalmente algunas de mis características, como también plasmar algunas prácticas visibles del desarrollo e implementación web client-side.",
+                "url": "https://github.com/facuzarate04/Personal_landing_page"
+            },
+            "p2": {
+                "languaje": "PHP / Laravel",
+                "title": "API Rest Backend",
+                "description": "Este proyecto cumple con el MVP simplificado de una API Rest que se utiliza para gestionar información de turnos en un estudio de tatuajes, a través de los distintos endpoints.",
+                "url": "https://github.com/facuzarate04/api-rest-backend"
+            }
+        }
+          
+    },
+    "socials":{
+        "ig": {
+            "name": "Instagram",
+            "color": "background-color: rgb(219 39 119);",
+            "image": "src/assets/svg/instagram.svg",
+            "url": "https://instagram.com/facuzarate04"
+        },
+        "gh": {
+            "name": "GitHub",
+            "color": "background-color: rgb(31 41 55);",
+            "image": "src/assets/svg/github.svg",
+            "url": "https://github.com/facuzarate04"
+        },
+        "ln": {
+            "name": "Linkedin",
+            "color": "background-color: rgb(29 78 216);",
+            "image": "src/assets/svg/linkedin.svg",
+            "url": "https://www.linkedin.com/in/facundo-zarate-2605a9ba/"
+        },
+        "gmail": {
+            "name": "Gmail",
+            "color": "background-color: rgb(220 38 38);",
+            "image": "src/assets/svg/gmail.svg",
+            "url": "mailto:facundo.zarate97@gmail.com"
+        }
+          
+    }
+}
