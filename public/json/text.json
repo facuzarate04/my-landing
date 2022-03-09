@@ -1,10 +1,10 @@
 {
     "nav-bar":{
-        "image": "src/assets/images/mi-cara.jpg"
+        "image": "../assets/images/mi-cara.jpg"
     },
     "description":{
         "title": "Full Stack Web Developer",
-        "image": "src/assets/images/mi-completo.jpeg",
+        "image": "../assets/images/mi-completo.jpeg",
         "p":{
             "p1": "Soy un desarrollador Full Stack con experiencia en desarrollo de aplicaciones y sitios web.",
             "p2": "Soy una persona emprendedora y proactiva, que se emociona con los desafíos y no se rinde fácilmente. Muy organizado y autodidacta cada día, nunca dejo de aprender y tengo un especial don de comunicación interpersonal."
@@ -13,7 +13,7 @@
     "about":{
         "title": "Acerca de mi",
         "studies-title": "Estudios y Trabajo",
-        "image": "src/assets/images/work.png",
+        "image": "../assets/images/work.png",
         "l": {
             "l1": "Soy un estudiante de 4to año de Ingeniería en Sistemas de Información de la Universidad Tecnológica Nacional.",
             "l2": "Actualmente me encuentro trabajando en una start-up extranjera, cumpliendo roles de desarrollador y product owner."
@@ -21,7 +21,7 @@
     },
     "interest":{
         "title": "Intereses Personales",
-        "image": "src/assets/images/meeting.png",
+        "image": "../assets/images/meeting.png",
         "l": {
             "l1": "<b>Música:</b> Me gusta mucho el género del rock nacional e internacional además practico batería y piano.",
             "l2": "<b>Lectura:</b> Mis géneros preferidos son la filosofía y policiales, aunque ocasionalmente suelo incluír novelas literarias e historia.",
@@ -30,7 +30,7 @@
     },
     "skills":{
         "title": "Idiomas y Soft Skills",
-        "image": "src/assets/images/drumms.png",
+        "image": "../assets/images/drumms.png",
         "languajes": "Idiomas:",
         "soft-skills": "Soft Skills:",
         "lang": {
@@ -76,25 +76,25 @@
         "ig": {
             "name": "Instagram",
             "color": "background-color: rgb(219 39 119);",
-            "image": "src/assets/svg/instagram.svg",
+            "image": "../assets/svg/instagram.svg",
             "url": "https://instagram.com/facuzarate04"
         },
         "gh": {
             "name": "GitHub",
             "color": "background-color: rgb(31 41 55);",
-            "image": "src/assets/svg/github.svg",
+            "image": "../assets/svg/github.svg",
             "url": "https://github.com/facuzarate04"
         },
         "ln": {
             "name": "Linkedin",
             "color": "background-color: rgb(29 78 216);",
-            "image": "src/assets/svg/linkedin.svg",
+            "image": "../assets/svg/linkedin.svg",
             "url": "https://www.linkedin.com/in/facundo-zarate-2605a9ba/"
         },
         "gmail": {
             "name": "Gmail",
             "color": "background-color: rgb(220 38 38);",
-            "image": "src/assets/svg/gmail.svg",
+            "image": "../assets/svg/gmail.svg",
             "url": "mailto:facundo.zarate97@gmail.com"
         }
           
