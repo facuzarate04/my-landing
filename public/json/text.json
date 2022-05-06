@@ -61,13 +61,25 @@
                 "languaje": "JavaScript / VueJS",
                 "title": "Landing Page Web Full Responsive",
                 "description": "Este proyecto fue desarrollado con el objetivo de mostrar principalmente algunas de mis características, como también plasmar algunas prácticas visibles del desarrollo e implementación web client-side.",
-                "url": "https://github.com/facuzarate04/Personal_landing_page"
+                "url": "https://github.com/facuzarate04/my-landing"
             },
             "p2": {
+                "languaje": "Python",
+                "title": "Dollar Web Scraping",
+                "description": "Proyecto realizado en python para hacer un web scraping sencillo de una página utilizada personalmente para tomar el precio actualizado del dolar en mi ciudad y posteriormente notificar a un email, si es que la variación ha superado un valor deseado.",
+                "url": "https://github.com/facuzarate04/dollar-web-scraping"
+            },
+            "p3": {
                 "languaje": "PHP / Laravel",
-                "title": "API Rest Backend",
-                "description": "Este proyecto cumple con el MVP simplificado de una API Rest que se utiliza para gestionar información de turnos en un estudio de tatuajes, a través de los distintos endpoints.",
-                "url": "https://github.com/facuzarate04/api-rest-backend"
+                "title": "E-Shop API",
+                "description": "Proyecto API en laravel que utiliza conexión a una DB relacional para realizar la persistencia de datos. Algunas de las herramientas utilizadas para gestionar los inicios de sesión de las SPA son Laravel Sanctum y Fortify",
+                "url": "https://github.com/facuzarate04/eshop-api"
+            },
+            "p4": {
+                "languaje": "JavaScript / VueJS",
+                "title": "E-Shop Web SPA",
+                "description": "Proyecto SPA que utiliza vue para renderizar las vistas y realizar peticiones a la API del proyecto E-Shop API.",
+                "url": "https://github.com/facuzarate04/eshop-client"
             }
         }
           
