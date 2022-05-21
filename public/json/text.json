@@ -3,55 +3,22 @@
         "image": "../assets/images/mi-cara.jpg"
     },
     "description":{
-        "title": "Full Stack Web Developer",
+        "title": "Full Stack Developer",
         "image": "../assets/images/mi-completo.jpeg",
         "p":{
             "p1": "Soy un desarrollador Full Stack con experiencia en desarrollo de aplicaciones y sitios web.",
-            "p2": "Soy una persona emprendedora y proactiva, que se emociona con los desafíos y no se rinde fácilmente. Muy organizado y autodidacta cada día, nunca dejo de aprender y tengo un especial don de comunicación interpersonal."
+            "p2": "Me encanta emprender y ser proactivo en todos los ámbitos de mi vida. Me emocionan los desafíos y el constante aprendizaje."
         }
     },
     "about":{
         "title": "Acerca de mi",
-        "studies-title": "Estudios y Trabajo",
+        "studies-title": "Estudios y Formación",
         "image": "../assets/images/work.png",
         "l": {
-            "l1": "Soy un estudiante de 4to año de Ingeniería en Sistemas de Información de la Universidad Tecnológica Nacional.",
-            "l2": "Actualmente me encuentro trabajando en una start-up extranjera, cumpliendo roles de desarrollador y product owner."
+            "l1": "Estudiante avanzado de Ingeniería en Sistemas de Información - Universidad Tecnológica Nacional.",
+            "l2": "Técnico Electrónico especializado en automatización y control - Pbo Constantino Spagnolo.",
+            "l3": "Lenguas extranjeras inglés - Big Ben high school."
         }  
-    },
-    "interest":{
-        "title": "Intereses Personales",
-        "image": "../assets/images/meeting.png",
-        "l": {
-            "l1": "<b>Música:</b> Me gusta mucho el género del rock nacional e internacional además practico batería y piano.",
-            "l2": "<b>Lectura:</b> Mis géneros preferidos son la filosofía y policiales, aunque ocasionalmente suelo incluír novelas literarias e historia.",
-            "l3": "<b>Tech:</b> Me gusta aprender y poner en practica conocimientos relacionados con la Web3 y tecnologías Blockchain"
-        }  
-    },
-    "skills":{
-        "title": "Idiomas y Soft Skills",
-        "image": "../assets/images/drumms.png",
-        "languajes": "Idiomas:",
-        "soft-skills": "Soft Skills:",
-        "lang": {
-            "l1": {
-                "title": "Español Nativo",
-                "bar-width": "width: 100%;",
-                "percent": "100%"
-            },
-            "l2": {
-                "title": "Inglés",
-                "bar-width": "width: 75%;",
-                "percent": "80%"
-            }
-        },
-        "s-skills": {
-            "l1": "Comunicación",
-            "l2": "Proactividad",
-            "l3": "Resolución de problemas",
-            "l4": "Capacidad de aceptación de críticas",
-            "l5": "Motivación"
-        }
     },
     "portfolio":{
         "title": "Mi Portfolio",
@@ -64,10 +31,10 @@
                 "url": "https://github.com/facuzarate04/my-landing"
             },
             "p2": {
-                "languaje": "Python",
-                "title": "Dollar Web Scraping",
-                "description": "Proyecto realizado en python para hacer un web scraping sencillo de una página utilizada personalmente para tomar el precio actualizado del dolar en mi ciudad y posteriormente notificar a un email, si es que la variación ha superado un valor deseado.",
-                "url": "https://github.com/facuzarate04/dollar-web-scraping"
+                "languaje": "Python / Flask",
+                "title": "API Info Dollar",
+                "description": "API desarrollada en Python haciendo uso de Flask para scrapear una web y obtener información que habitualmente consumo para notificarme el valor del dolar en mi ciudad. Los endpoints de esta API son consumidos por un proyecto personal en una Skill de Amazon Alexa.",
+                "url": "https://github.com/facuzarate04/info-dollar-api"
             },
             "p3": {
                 "languaje": "PHP / Laravel",
@@ -83,6 +50,40 @@
             }
         }
           
+    },
+    "interest":{
+        "title": "Intereses Personales",
+        "image": "../assets/images/meeting.png",
+        "l": {
+            "l1": "<b>Música:</b> Considero la música como un excelente canal de transmisión. Toco batería y un poco de guitarra.",
+            "l2": "<b>Lectura:</b> Muchas de mis horas diarias son de lectura. Mis géneros preferidos son los policiales, novelas e historia",
+            "l3": "<b>Tech:</b> Me gusta aprender y poner en practica tecnologías de punta. Actualmente estoy aprendiendo un poco de web3."
+        }  
+    },
+    "skills":{
+        "title": "Idiomas y Soft Skills",
+        "image": "../assets/images/drumms.png",
+        "languajes": "Idiomas:",
+        "soft-skills": "Soft Skills:",
+        "lang": {
+            "l1": {
+                "title": "Español Nativo",
+                "bar-width": "width: 100%; background-color: #235061;",
+                "percent": "100%"
+            },
+            "l2": {
+                "title": "Inglés",
+                "bar-width": "width: 80%; background-color: #235061;",
+                "percent": "80%"
+            }
+        },
+        "s-skills": {
+            "l1": "Comunicación",
+            "l2": "Proactividad",
+            "l3": "Resolución de problemas",
+            "l4": "Capacidad de aceptación de críticas",
+            "l5": "Motivación"
+        }
     },
     "socials":{
         "ig": {

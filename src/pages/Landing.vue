@@ -7,19 +7,15 @@
             <template #content>
                 <!--Intro-->
                 <div ref="inicio" class="pt-24">
-                    <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+                    <div class="container px-3 py-10 md:py-20 mx-auto flex flex-wrap flex-col md:flex-row items-center">
                         <!--Left Col-->
-                        <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+                        <div class="w-full mx-auto md:w-2/5 justify-center items-start text-center">
                             <h1 class="my-4 text-4xl font-bold leading-tight">
                             {{jsonDescription['title']}}
                             </h1>
                             <p v-for="p in jsonDescription['p']" :key="p" class="leading-normal text-xl mb-2">
                             {{p}}
                             </p>
-                        </div>
-                        <!--Right Col-->
-                        <div class="w-full md:w-3/5 py-2 mb-8 text-center">
-                            <img class="w-auto md:w-3/5 m-auto z-50 rounded-xl max-h-96 object-contain" :src="jsonDescription['image']" />
                         </div>
                     </div>
                 </div>
@@ -44,6 +40,34 @@
                         </g>
                     </svg>
                 </div>
+                <section class="bg-white border-b py-10" ref="portfolio">
+                    <div class="container mx-auto flex flex-wrap pt-4 pb-12">
+                        <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+                            {{jsonPortFolio['title']}}
+                        </h1>
+                        <h1 class="w-full my-2 text-lg font-semibold leading-tight text-center text-gray-600">
+                            {{jsonPortFolio['subtitle']}}
+                        </h1>
+                        <div class="w-full mb-4">
+                            <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+                        </div>
+                        <a :href="project['url']" v-for="project in jsonPortFolio['projects']" :key="project" class="w-full md:w-1/3 p-6 flex flex-col mx-auto">
+                            <div style="background-color: #235061;" class="flex-1 rounded-xl overflow-hidden shadow-md py-10">
+                                <div class="flex flex-wrap no-underline hover:no-underline space-y-4">
+                                    <p class="mx-auto text-gray-800 rounded-lg bg-gray-200 text-xs md:text-sm px-4">
+                                        {{project['languaje']}}
+                                    </p>
+                                    <div class="w-full font-bold text-xl text-white px-6">
+                                        {{project['title']}}
+                                    </div>
+                                    <p class="text-gray-200 text-sm px-6 mb-2">
+                                        {{project['description']}}
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </section>
                 <section class="bg-white border-b py-10" ref="about" >
                     <div class="container max-w-5xl mx-auto m-8">
                         <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
@@ -100,10 +124,10 @@
                                     <li v-for="l in jsonSkills['lang']" :key="l" class="my-2">
                                         <b>{{l['title']}}</b>
                                         <div class="relative bg-gray-600 rounded-md">
-                                            <div class="absolute bottom-1.5 text-white text-sm inline-block bg-blue-700 px-2 rounded-full">
+                                            <div class="absolute bottom-1.5 text-white text-sm inline-block bg-gray-900 px-2 rounded-full">
                                                 {{l['percent']}}
                                             </div>
-                                            <div :style="l['bar-width']" class="bg-blue-900 py-4 text-center rounded-md">
+                                            <div :style="l['bar-width']" class="py-4 text-center rounded-md">
                                             </div>
                                         </div>
                                     </li>
@@ -116,38 +140,10 @@
                         </div>
                     </div>
                 </section>
-                <section class="bg-white border-b py-10" ref="portfolio">
-                    <div class="shadow-xl container mx-auto flex flex-wrap pt-4 pb-12">
-                        <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-                            {{jsonPortFolio['title']}}
-                        </h1>
-                        <h1 class="w-full my-2 text-lg font-semibold leading-tight text-center text-gray-600">
-                            {{jsonPortFolio['subtitle']}}
-                        </h1>
-                        <div class="w-full mb-4">
-                            <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
-                        </div>
-                        <a :href="project['url']" v-for="project in jsonPortFolio['projects']" :key="project" class="w-full md:w-1/3 p-6 flex flex-col mx-auto">
-                            <div  class="flex-1 bg-blue-900 rounded-t rounded-b-none overflow-hidden shadow py-10">
-                                <div class="flex flex-wrap no-underline hover:no-underline space-y-4">
-                                    <p class="w-full text-gray-300 text-xs md:text-sm px-6">
-                                        {{project['languaje']}}
-                                    </p>
-                                    <div class="w-full font-bold text-xl text-white px-6">
-                                        {{project['title']}}
-                                    </div>
-                                    <p class="text-gray-200 text-sm px-6 mb-2">
-                                        {{project['description']}}
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </section>
             </template>
             <template #footer>
-                    <section class="bg-gray-100 py-10" ref="contacto">
-                        <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800 shadow-xl">
+                    <section class="bg-white py-10" ref="contacto">
+                        <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
                             <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
                                 Contacto
                             </h1>
@@ -156,8 +152,7 @@
                             </div>
                             <!-- Contacto -->
                             <div class="flex items-center justify-center flex-col">
-
-                                <div class="sm:flex sm:items-center sm:justify-center sm:space-x-3 text-center">
+                                <div class="shadow-xl p-10 px-20 sm:flex sm:items-center sm:justify-center sm:space-x-3 text-center">
                                     <a target="_blank" v-for="social in jsonSocials" :key="social" :href="social['url']"
                                         :style="social['color']"
                                         class="my-2 w-1/2 m-auto sm:my-0 sm:w-auto px-4 py-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
