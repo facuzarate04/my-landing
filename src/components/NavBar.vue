@@ -30,15 +30,15 @@
                         </a>
                     </li> -->
                     <li class="mr-3">
-                        <button :class="{'underline decoration-white decoration-4 underline-offset-8': active == 'about'}" class="link inline-block py-2 px-4 text-white font-bold" 
-                        @click="scrollTo('about')">
-                            Acerca de mi
-                        </button>
-                    </li>
-                    <li class="mr-3">
                         <button :class="{'underline decoration-white decoration-4 underline-offset-8': active == 'portfolio'}" class="link inline-block py-2 px-4 text-white font-bold" 
                         @click="scrollTo('portfolio')">
                             Mi Portfolio
+                        </button>
+                    </li>
+                    <li class="mr-3">
+                        <button :class="{'underline decoration-white decoration-4 underline-offset-8': active == 'about'}" class="link inline-block py-2 px-4 text-white font-bold" 
+                        @click="scrollTo('about')">
+                            Acerca de mi
                         </button>
                     </li>
                     <li class="mr-3">
