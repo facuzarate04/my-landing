@@ -33,19 +33,19 @@
             "p2": {
                 "languaje": "Python / Flask",
                 "title": "API Info Dollar",
-                "description": "API desarrollada en Python haciendo uso de Flask para scrapear una web y obtener información que habitualmente consumo para notificarme el valor del dolar en mi ciudad. Los endpoints de esta API son consumidos por un proyecto personal en una Skill de Amazon Alexa.",
+                "description": "API desarrollada en Python haciendo uso de Flask para scrapear una web y obtener información que consulto de forma habitual para conocer el precio del dollar en mi ciudad natal. Esta API es consumida por un proyecto personal en una Skill de Amazon Alexa.",
                 "url": "https://github.com/facuzarate04/info-dollar-api"
             },
             "p3": {
                 "languaje": "PHP / Laravel",
                 "title": "E-Shop API",
-                "description": "Proyecto API en laravel que utiliza conexión a una DB relacional para realizar la persistencia de datos. Algunas de las herramientas utilizadas para gestionar los inicios de sesión de las SPA son Laravel Sanctum y Fortify",
+                "description": "E-Commerce API encargada de manejar la información, lógica de negocio y sesiones de los clientes que se realizan peticiones desde el SPA project realizado en VueJs.",
                 "url": "https://github.com/facuzarate04/eshop-api"
             },
             "p4": {
                 "languaje": "JavaScript / VueJS",
                 "title": "E-Shop Web SPA",
-                "description": "Proyecto SPA que utiliza vue para renderizar las vistas y realizar peticiones a la API del proyecto E-Shop API.",
+                "description": "E-Commerce SPA que consume la API realizada en Laravel para realizar ordenes de compra con distintos productos, cantidades y métodos de pagos.",
                 "url": "https://github.com/facuzarate04/eshop-client"
             }
         }
