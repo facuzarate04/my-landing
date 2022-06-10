@@ -21,28 +21,28 @@
             <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-gray-600 lg:bg-transparent text-black p-4 lg:p-0 z-20"
                 id="nav-content">
                 <ul class="list-reset lg:flex justify-end flex-1 items-center">
-                    <li class="mr-3">
+                    <!-- <li class="mr-3">
                         <a
                         :href="cv_url"
                         download="Facundo Zarate CV" 
                         class="cursor-pointer inline-block py-2 px-4 text-black hover:bg-gray-300 font-bold no-underline rounded-xl bg-gray-100">
                             Mi CV/Resume
                         </a>
-                    </li>
+                    </li> -->
                     <li class="mr-3">
-                        <button class="link inline-block py-2 px-4 text-white font-bold no-underline" 
-                        @click="scrollTo('about')">
-                            Acerca de mi
-                        </button>
-                    </li>
-                    <li class="mr-3">
-                        <button class="link inline-block py-2 px-4 text-white font-bold no-underline" 
+                        <button :class="{'underline decoration-white decoration-4 underline-offset-8': active == 'portfolio'}" class="link inline-block py-2 px-4 text-white font-bold" 
                         @click="scrollTo('portfolio')">
                             Mi Portfolio
                         </button>
                     </li>
                     <li class="mr-3">
-                        <button class="link inline-block py-2 px-4 text-white font-bold no-underline"
+                        <button :class="{'underline decoration-white decoration-4 underline-offset-8': active == 'about'}" class="link inline-block py-2 px-4 text-white font-bold" 
+                        @click="scrollTo('about')">
+                            Acerca de mi
+                        </button>
+                    </li>
+                    <li class="mr-3">
+                        <button :class="{'underline decoration-white decoration-4 underline-offset-8': active == 'contacto'}" class="link inline-block py-2 px-4 text-white font-bold"
                         @click="scrollTo('contacto')">
                             Contacto
                         </button>
@@ -61,11 +61,13 @@ export default{
         return {
             cv_url: process.env.CV_URL,
             jsonNavBar: json['nav-bar'],
-            showingMenu: false
+            showingMenu: false,
+            active: null
         }   
     },
     methods: {
         scrollTo: function(ref) {
+            this.active = ref
             this.$emit('scrollTo',ref)
         }
     }
