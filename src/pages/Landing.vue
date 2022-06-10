@@ -6,16 +6,13 @@
             </template>
             <template #content>
                 <!--Intro-->
-                <div ref="inicio" class="pt-24">
-                    <div class="container px-3 py-10 md:py-20 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+                <div ref="inicio" class="py-20">
+                    <div class="container md:pt-20 px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
                         <!--Left Col-->
                         <div class="w-full mx-auto md:w-2/5 justify-center items-start text-center">
                             <h1 class="my-4 text-4xl font-bold leading-tight">
-                            {{jsonDescription['title']}}
+                                <span class="title-typed"></span>
                             </h1>
-                            <p v-for="p in jsonDescription['p']" :key="p" class="leading-normal text-xl mb-2">
-                            {{p}}
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -110,34 +107,6 @@
                                 <img :src="jsonInterest['image']" alt="" class="h-96">
                             </div>
                         </div>
-
-                        <div class="flex flex-wrap shadow-xl">
-                            <div class="w-full sm:w-1/2 p-6 text-black">
-                                <img :src="jsonSkills['image']" alt="" class="h-96">
-                            </div>
-                            <div class="w-5/6 sm:w-1/2 p-6 m-auto">
-                                <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
-                                    {{jsonSkills['title']}}
-                                </h3>
-                                <div class="text-gray-600 mb-8">
-                                    <b>{{jsonSkills['languajes']}}</b>
-                                    <li v-for="l in jsonSkills['lang']" :key="l" class="my-2">
-                                        <b>{{l['title']}}</b>
-                                        <div class="relative bg-gray-600 rounded-md">
-                                            <div class="absolute bottom-1.5 text-white text-sm inline-block bg-gray-900 px-2 rounded-full">
-                                                {{l['percent']}}
-                                            </div>
-                                            <div :style="l['bar-width']" class="py-4 text-center rounded-md">
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <b>{{jsonSkills['soft-skills']}}</b>
-                                    <li v-for="l in jsonSkills['s-skills']" :key="l">
-                                        {{l}}
-                                    </li>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </section>
             </template>
@@ -151,11 +120,11 @@
                                 <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
                             </div>
                             <!-- Contacto -->
-                            <div class="flex items-center justify-center flex-col">
-                                <div class="shadow-xl p-10 px-20 sm:flex sm:items-center sm:justify-center sm:space-x-3 text-center">
+                            <div class="sm:flex items-center justify-center sm:flex-col">
+                                <div class="p-10 px-20 sm:flex sm:items-center sm:justify-center sm:space-x-3 text-center">
                                     <a target="_blank" v-for="social in jsonSocials" :key="social" :href="social['url']"
                                         :style="social['color']"
-                                        class="my-2 w-1/2 m-auto sm:my-0 sm:w-auto px-4 py-2 font-semibold text-white inline-flex items-center space-x-2 rounded">
+                                        class="my-2 w-full m-auto sm:my-0 sm:w-auto px-4 py-2 font-semibold text-white inline-flex justify-center items-center space-x-2 rounded-full">
                                         <img :src="social['image']" class="w-8 h-8 fill-current" alt="">
                                         <span>{{social['name']}}</span>
                                     </a>
@@ -197,6 +166,7 @@
 import json from '../../public/json/text.json'
 import GuestLayout from '../layouts/GuestLayout.vue'
 import NavBar from '../components/NavBar.vue'
+import Typed from 'typed.js';
 export default {
     data() {
         return {
@@ -218,6 +188,23 @@ export default {
         }
     },
     mounted() {
+
+        var titleOptions = {
+            strings: [
+                this.jsonDescription['title-1'],
+                this.jsonDescription['title-2'],
+                this.jsonDescription['title-3']
+            ],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 1200,
+            smartBackspace: false,
+            loop: true,
+            loopCount: Infinity,
+        };
+
+        var titleTyped = new Typed('.title-typed', titleOptions);
+        
         var scrollpos = window.scrollY;
         var header = document.getElementById("header");
         var navcontent = document.getElementById("nav-content");

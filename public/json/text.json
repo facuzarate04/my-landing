@@ -3,8 +3,9 @@
         "image": "../assets/images/mi-cara.jpg"
     },
     "description":{
-        "title": "Full Stack Developer",
-        "image": "../assets/images/mi-completo.jpeg",
+        "title-1": "JavaScript Developer",
+        "title-2": "PHP Developer",
+        "title-3": "Python Developer",
         "p":{
             "p1": "Soy un desarrollador Full Stack con experiencia en desarrollo de aplicaciones y sitios web.",
             "p2": "Me encanta emprender y ser proactivo en todos los ámbitos de mi vida. Me emocionan los desafíos y el constante aprendizaje."
@@ -59,31 +60,6 @@
             "l2": "<b>Lectura:</b> Muchas de mis horas diarias son de lectura. Mis géneros preferidos son los policiales, novelas e historia",
             "l3": "<b>Tech:</b> Me gusta aprender y poner en practica tecnologías de punta. Actualmente estoy aprendiendo un poco de web3."
         }  
-    },
-    "skills":{
-        "title": "Idiomas y Soft Skills",
-        "image": "../assets/images/drumms.png",
-        "languajes": "Idiomas:",
-        "soft-skills": "Soft Skills:",
-        "lang": {
-            "l1": {
-                "title": "Español Nativo",
-                "bar-width": "width: 100%; background-color: #235061;",
-                "percent": "100%"
-            },
-            "l2": {
-                "title": "Inglés",
-                "bar-width": "width: 80%; background-color: #235061;",
-                "percent": "80%"
-            }
-        },
-        "s-skills": {
-            "l1": "Comunicación",
-            "l2": "Proactividad",
-            "l3": "Resolución de problemas",
-            "l4": "Capacidad de aceptación de críticas",
-            "l5": "Motivación"
-        }
     },
     "socials":{
         "ig": {
