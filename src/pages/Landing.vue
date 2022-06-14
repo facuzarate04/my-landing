@@ -37,7 +37,7 @@
                         </g>
                     </svg>
                 </div>
-                <section class="bg-white border-b py-10" ref="portfolio">
+                <section class="bg-white py-10" ref="portfolio">
                     <div class="container mx-auto flex flex-wrap pt-4 pb-12">
                         <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
                             {{jsonPortFolio['title']}}
@@ -65,46 +65,34 @@
                         </a>
                     </div>
                 </section>
-                <section class="bg-white border-b py-10" ref="about" >
+                <section class="bg-white py-10" ref="about" >
                     <div class="container max-w-5xl mx-auto m-8">
                         <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
                             {{jsonAbout['title']}}
                         </h1>
-                        <div class="w-full mb-4">
+                        <div class="w-full mb-8">
                             <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
                         </div>
-
-                        <div class="flex flex-wrap shadow-xl mb-8">
-                            <div class="w-full sm:w-1/2 p-6 text-black">
-                                <img :src="jsonAbout['image']" alt="" class="h-96">
-                            </div>
-                            <div class="w-5/6 sm:w-1/2 p-6 m-auto">
+                        <div class="flex flex-wrap my-2">
+                            <div class="w-5/6 p-6 m-auto">
                                 <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
                                     {{jsonAbout['studies-title']}}
                                 </h3>
-                                <div class="text-gray-600 mb-8">
+                                <div class="text-gray-600">
                                     <li v-for="l in jsonAbout['l']" :key="l">
                                         {{l}}
                                     </li>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="flex flex-wrap shadow-xl mb-8">
-                            <div class="w-5/6 sm:w-1/2 p-6 m-auto">
+                        <div class="flex flex-wrap my-2">
+                            <div class="w-full sm:w-5/6 p-6 m-auto">
                                 <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
                                     {{jsonInterest['title']}}
                                 </h3>
-                                <div class="text-gray-600 mb-8">
-                                    <ul>
-                                    <li v-for="l in jsonInterest['l']" :key="l">
-                                        <p v-html="l"></p>
-                                    </li>
-                                    </ul>
+                                <div style="background-color: #235061;" class="p-10 text-gray-100 rounded-xl h-96 flex items-center sm:h-50 text-left">
+                                        <code class="skills-typed"></code>
                                 </div>
-                            </div>
-                            <div class="w-full sm:w-1/2 p-6 text-black">
-                                <img :src="jsonInterest['image']" alt="" class="h-96">
                             </div>
                         </div>
                     </div>
@@ -185,25 +173,48 @@ export default {
     methods: {
         scrollTo: function(ref) {
             this.$refs[ref].scrollIntoView({behavior: 'smooth'})
+        },
+        titleTyped() {
+            var titleOptions = {
+                strings: [
+                    this.jsonDescription['title-1'],
+                    this.jsonDescription['title-2'],
+                    this.jsonDescription['title-3']
+                ],
+                typeSpeed: 50,
+                backSpeed: 30,
+                backDelay: 1200,
+                smartBackspace: false,
+                loop: true,
+                loopCount: Infinity,
+            };
+
+            var titleTyped = new Typed('.title-typed', titleOptions);
+        },
+        skillsTyped() {
+            var skillsOptions = {
+                strings: [
+                    `let skillsArr = [<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'JavaScript'</b>, framework: <b>'VueJS'</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'PHP'</b>, framework: <b>'Laravel'</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'Python'</b>, framework: <b>'Flask'</b>},<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'SQL'</b>, framework: <b>null</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'Docker</b>', framework: <b>null</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'AWS'</b>, framework: <b>null</b>},<br>];`,
+                    `$skillsArr = [<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(object) ['name' => <b>'JavaScript'</b>, 'framework' => <b>'VueJS'</b>]',<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(object) ['name' => <b>'PHP'</b>, 'framework' => '<b>'Laravel'</b>'],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(object) ['name' => <b>'Python'</b>, 'framework' => <b>'Flask'</b>],<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(object) ['name' => <b>'SQL'</b>, 'framework' => <b>null</b>],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(object) ['name' => <b>'Docker</b>', 'framework' => <b>null</b>],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(object) ['name' => <b>'AWS'</b>, 'framework' => <b>null</b>],<br>];`,
+                    `skillsArr = [<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'name': <b>'JavaScript'</b>, 'framework': <b>'VueJS'</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'name': <b>'PHP'</b>, 'framework': <b>'Laravel'</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'name': <b>'Python'</b>, 'framework': <b>'Flask'</b>},<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'name':<b>'SQL'</b>, 'framework': <b>None</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'name': <b>'Docker</b>', 'framework': <b>None</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'name': <b>'AWS'</b>,'framework': <b>None</b>},<br>];`
+                ],
+                typeSpeed: 1,
+                backSpeed: 1,
+                backDelay: 5000,
+                smartBackspace: false,
+                loop: true,
+                loopCount: Infinity,
+                contentType: 'html',
+                showCursor: false,
+            };
+
+            var skillsTyped = new Typed('.skills-typed', skillsOptions);
         }
     },
     mounted() {
 
-        var titleOptions = {
-            strings: [
-                this.jsonDescription['title-1'],
-                this.jsonDescription['title-2'],
-                this.jsonDescription['title-3']
-            ],
-            typeSpeed: 50,
-            backSpeed: 30,
-            backDelay: 1200,
-            smartBackspace: false,
-            loop: true,
-            loopCount: Infinity,
-        };
-
-        var titleTyped = new Typed('.title-typed', titleOptions);
+        this.titleTyped()
+        this.skillsTyped()
         
         var scrollpos = window.scrollY;
         var header = document.getElementById("header");
