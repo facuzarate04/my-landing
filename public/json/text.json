@@ -53,13 +53,8 @@
           
     },
     "interest":{
-        "title": "Intereses Personales",
-        "image": "../assets/images/meeting.png",
-        "l": {
-            "l1": "<b>Música:</b> Considero la música como un excelente canal de transmisión. Toco batería y un poco de guitarra.",
-            "l2": "<b>Lectura:</b> Muchas de mis horas diarias son de lectura. Mis géneros preferidos son los policiales, novelas e historia",
-            "l3": "<b>Tech:</b> Me gusta aprender y poner en practica tecnologías de punta. Actualmente estoy aprendiendo un poco de web3."
-        }  
+        "title": "Skills",
+        "image": "../assets/images/drumms.png"
     },
     "socials":{
         "ig": {
