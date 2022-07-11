@@ -49,7 +49,7 @@
                             <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
                         </div>
                         <a :href="project['url']" v-for="project in jsonPortFolio['projects']" :key="project" class="w-full md:w-1/3 p-6 flex flex-col mx-auto">
-                            <div style="background-color: #235061;" class="flex-1 rounded-xl overflow-hidden shadow-md py-10">
+                            <div class="flex-1 bg-custom-500 hover:bg-custom-600 rounded-xl overflow-hidden shadow-md py-10">
                                 <div class="flex flex-wrap no-underline hover:no-underline space-y-4">
                                     <p class="mx-auto text-gray-800 rounded-lg bg-gray-200 text-xs md:text-sm px-4">
                                         {{project['languaje']}}
@@ -90,7 +90,7 @@
                                 <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
                                     {{jsonInterest['title']}}
                                 </h3>
-                                <div style="background-color: #235061;" class="p-10 text-gray-100 rounded-xl h-96 flex items-center sm:h-50 text-left">
+                                <div class="bg-custom-500 text-gray-100 rounded-xl h-96 flex items-center justify-center sm:h-50 text-left">
                                         <code class="skills-typed"></code>
                                 </div>
                             </div>
@@ -194,13 +194,11 @@ export default {
         skillsTyped() {
             var skillsOptions = {
                 strings: [
-                    `let skillsArr = [<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'JavaScript'</b>, framework: <b>'VueJS'</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'PHP'</b>, framework: <b>'Laravel'</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'Python'</b>, framework: <b>'Flask'</b>},<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'SQL'</b>, framework: <b>null</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'Docker</b>', framework: <b>null</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'AWS'</b>, framework: <b>null</b>},<br>];`,
-                    `$skillsArr = [<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(object) ['name' => <b>'JavaScript'</b>, 'framework' => <b>'VueJS'</b>],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(object) ['name' => <b>'PHP'</b>, 'framework' => <b>'Laravel'</b>],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(object) ['name' => <b>'Python'</b>, 'framework' => <b>'Flask'</b>],<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(object) ['name' => <b>'SQL'</b>, 'framework' => <b>null</b>],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(object) ['name' => <b>'Docker</b>', 'framework' => <b>null</b>],<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(object) ['name' => <b>'AWS'</b>, 'framework' => <b>null</b>],<br>];`,
-                    `skillsArr = [<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'name': <b>'JavaScript'</b>, 'framework': <b>'VueJS'</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'name': <b>'PHP'</b>, 'framework': <b>'Laravel'</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'name': <b>'Python'</b>, 'framework': <b>'Flask'</b>},<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'name':<b>'SQL'</b>, 'framework': <b>None</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'name': <b>'Docker</b>', 'framework': <b>None</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'name': <b>'AWS'</b>,'framework': <b>None</b>},<br>];`
+                    `let skillsArr = [<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'JavaScript'</b>, tools: [<b>'VueJS'</b>, <b>'ExpressJS'</b>]},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'PHP'</b>, tools: <b>'Laravel'</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'Python'</b>, tools: <b>'Flask'</b>},<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'SQL'</b>, tools: [<b>'MySQL'</b>, <b>'PostgreSQL'</b>]},<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'NoSQL'</b>, tools: <b>MongoDB</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'Docker</b>', tools: <b>null</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'AWS'</b>, tools: <b>null</b>}<br>];`,
                 ],
                 typeSpeed: 1,
                 backSpeed: 1,
-                backDelay: 5000,
+                backDelay: 10000,
                 smartBackspace: false,
                 loop: true,
                 loopCount: Infinity,
