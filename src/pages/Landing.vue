@@ -9,7 +9,7 @@
                 <div ref="inicio" class="py-20">
                     <div class="container md:pt-20 px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
                         <!--Left Col-->
-                        <div class="w-full mx-auto md:w-2/5 justify-center items-start text-center">
+                        <div class="w-full mx-auto justify-center items-start text-center">
                             <h1 class="my-4 text-4xl font-bold leading-tight">
                                 <span class="title-typed"></span>
                             </h1>
@@ -37,61 +37,81 @@
                         </g>
                     </svg>
                 </div>
-                <section class="bg-white py-10" ref="portfolio">
-                    <div class="container mx-auto flex flex-wrap pt-4 pb-12">
-                        <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-                            {{jsonPortFolio['title']}}
-                        </h1>
-                        <h1 class="w-full my-2 text-lg font-semibold leading-tight text-center text-gray-600">
-                            {{jsonPortFolio['subtitle']}}
-                        </h1>
-                        <div class="w-full mb-4">
-                            <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
-                        </div>
-                        <a :href="project['url']" v-for="project in jsonPortFolio['projects']" :key="project" class="w-full md:w-1/3 p-6 flex flex-col mx-auto">
-                            <div class="flex-1 bg-custom-500 hover:bg-custom-600 rounded-xl overflow-hidden shadow-md py-10">
-                                <div class="flex flex-wrap no-underline hover:no-underline space-y-4">
-                                    <p class="mx-auto text-gray-800 rounded-lg bg-gray-200 text-xs md:text-sm px-4">
-                                        {{project['languaje']}}
-                                    </p>
-                                    <div class="w-full font-bold text-xl text-white px-6">
-                                        {{project['title']}}
-                                    </div>
-                                    <p class="text-gray-200 text-sm px-6 mb-2">
-                                        {{project['description']}}
-                                    </p>
-                                </div>
-                            </div>
+                <!-- Socials -->
+                <section class="bg-white" ref="contacto">
+                    <div class="p-10 px-20 text-center flex flex-col space-y-4 max-w-lg mx-auto">
+                        <a target="_blank" v-for="social in jsonSocials" :key="social" :href="social['url']"
+                            :style="social['color']"
+                            class="my-2 w-full py-2 font-semibold flex justify-center space-x-2 items-center text-white space-x-4 rounded-full">
+                            <img :src="social['image']" class="w-8 h-8 fill-current" alt="">
+                            <span>{{social['name']}}</span>
                         </a>
                     </div>
                 </section>
-                <section class="bg-white py-10" ref="about" >
-                    <div class="container max-w-5xl mx-auto m-8">
-                        <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-                            {{jsonAbout['title']}}
-                        </h1>
-                        <div class="w-full mb-8">
-                            <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+                <!-- Portfolio -->
+                <section class="bg-white py-4 px-10" ref="portfolio">
+                    <div class="container mx-auto flex flex-wrap pt-4 pb-4 rounded-xl border-2 max-w-xl">
+                        <div @click="showingPortfolio = !showingPortfolio" class="w-full flex items-center justify-between px-10 cursor-pointer my-2 font-bold leading-tight text-center text-gray-800">
+                            <p class="text-3xl">{{jsonPortFolio['title']}}</p>
+                            <svg v-if="!showingPortfolio" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
+                            <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+                            </svg>
                         </div>
-                        <div class="flex flex-wrap my-2">
-                            <div class="w-5/6 p-6 m-auto">
-                                <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
-                                    {{jsonAbout['studies-title']}}
-                                </h3>
-                                <div class="text-gray-600">
-                                    <li v-for="l in jsonAbout['l']" :key="l">
-                                        {{l}}
-                                    </li>
+                        <template v-if="showingPortfolio">
+                            <a :href="project['url']" v-for="project in jsonPortFolio['projects']" :key="project" class="w-full max-w-lg p-6 flex flex-col mx-auto">
+                                <div class="flex-1 bg-custom-500 hover:bg-custom-600 rounded-xl overflow-hidden shadow-md py-10">
+                                    <div class="flex flex-wrap no-underline hover:no-underline space-y-4">
+                                        <p class="mx-auto text-gray-800 rounded-lg bg-gray-200 text-xs md:text-sm px-4">
+                                            {{project['languaje']}}
+                                        </p>
+                                        <div class="w-full font-bold text-xl text-white px-6">
+                                            {{project['title']}}
+                                        </div>
+                                        <p class="text-gray-200 text-sm px-6 mb-2">
+                                            {{project['description']}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </template>
+                    </div>
+                </section>
+                <!-- About me -->
+                <section class="bg-white py-4 pb-10 px-10" ref="about" >
+                    <div class="container mx-auto flex flex-wrap pt-4 pb-4 rounded-xl border-2 max-w-xl">
+                        <div @click="showingAbout = !showingAbout" class="w-full flex items-center justify-between px-10 cursor-pointer my-2 font-bold leading-tight text-center text-gray-800">
+                            <p class="text-3xl">{{jsonAbout['title']}}</p>
+                            <svg v-if="!showingAbout" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                            </svg>
+                            <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+                            </svg>
+                        </div>
+                        <div v-show="showingAbout">
+                            <div class="flex flex-wrap my-2">
+                                <div class="w-5/6 p-6 m-auto">
+                                    <h3 class="text-xl text-gray-800 font-bold leading-none mb-3">
+                                        {{jsonAbout['studies-title']}}
+                                    </h3>
+                                    <div class="text-gray-600 text-left space-y-4">
+                                        <li v-for="l in jsonAbout['l']" :key="l">
+                                            {{l}}
+                                        </li>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="flex flex-wrap my-2">
-                            <div class="w-full sm:w-5/6 p-6 m-auto">
-                                <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
-                                    {{jsonInterest['title']}}
-                                </h3>
-                                <div class="bg-custom-500 text-gray-100 rounded-xl h-96 flex items-center justify-center sm:h-50 text-left">
+                            <div class="flex flex-wrap my-2">
+                                <div class="w-full p-6 m-auto">
+                                    <h3 class="text-xl text-gray-800 font-bold leading-none mb-3">
+                                        {{jsonInterest['title']}}
+                                    </h3>
+                                    <div class="bg-black px-6 text-gray-100 rounded-xl h-96 flex items-center justify-center sm:h-50 text-left">
                                         <code class="skills-typed"></code>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -99,30 +119,6 @@
                 </section>
             </template>
             <template #footer>
-                    <section class="bg-white py-10" ref="contacto">
-                        <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
-                            <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-                                Contacto
-                            </h1>
-                            <div class="w-full mb-4">
-                                <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
-                            </div>
-                            <!-- Contacto -->
-                            <div class="sm:flex items-center justify-center sm:flex-col">
-                                <div class="p-10 px-20 sm:flex sm:items-center sm:justify-center sm:space-x-3 text-center">
-                                    <a target="_blank" v-for="social in jsonSocials" :key="social" :href="social['url']"
-                                        :style="social['color']"
-                                        class="my-2 w-full m-auto sm:my-0 sm:w-auto px-4 py-2 font-semibold text-white inline-flex justify-center items-center space-x-2 rounded-full">
-                                        <img :src="social['image']" class="w-8 h-8 fill-current" alt="">
-                                        <span>{{social['name']}}</span>
-                                    </a>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </section>
-
                     <svg class="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink">
                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -135,13 +131,13 @@
                             </g>
                         </g>
                     </svg>
-                    <section class="container mx-auto text-center py-6">
+                    <section class="container mx-auto text-center p-4">
                         <h3 class="my-4 text-3xl leading-tight">
                             ¡Gracias por visitar mi página personal!
                         </h3>
                         <button
                             @click="scrollTo('inicio')" 
-                            class="link mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                            class="link mx-auto lg:mx-0 bg-white text-gray-800 font-bold rounded-full my-6 py-2 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                             Subir
                         </button>
                     </section>
@@ -163,7 +159,9 @@ export default {
             jsonInterest: json['interest'],
             jsonSkills: json['skills'],
             jsonPortFolio: json['portfolio'],
-            jsonSocials: json['socials']
+            jsonSocials: json['socials'],
+            showingPortfolio: false,
+            showingAbout: false,
         }
     },
     components: {
