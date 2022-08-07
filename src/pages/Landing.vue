@@ -1,13 +1,13 @@
 <template>
     <div>
         <GuestLayout>
-            <template #navbar>
+            <!-- <template #navbar>
                 <NavBar @scrollTo="scrollTo"/>
-            </template>
+            </template> -->
             <template #content>
                 <!--Intro-->
-                <div ref="inicio" class="py-20">
-                    <div class="container md:pt-20 px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+                <div ref="inicio" class="py-12">
+                    <div class="container md:pt-12 px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
                         <!--Left Col-->
                         <div class="w-full mx-auto justify-center items-start text-center">
                             <h1 class="my-4 text-4xl font-bold leading-tight">
@@ -16,7 +16,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="relative -mt-12 lg:-mt-24 ">
+                <div class="relative -mt-10 lg:-mt-24 ">
                     <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink">
                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -39,12 +39,12 @@
                 </div>
                 <!-- Socials -->
                 <section class="bg-white" ref="contacto">
-                    <div class="p-10 px-20 text-center flex flex-col space-y-4 max-w-lg mx-auto">
+                    <div class="py-10 px-20 text-center flex flex-col space-y-4 max-w-lg mx-auto">
                         <a target="_blank" v-for="social in jsonSocials" :key="social" :href="social['url']"
                             :style="social['color']"
-                            class="my-2 w-full py-2 font-semibold flex justify-center space-x-2 items-center text-white space-x-4 rounded-full">
-                            <img :src="social['image']" class="w-8 h-8 fill-current" alt="">
-                            <span>{{social['name']}}</span>
+                            class="my-2 relative w-full py-2 md:py-3 font-semibold flex justify-center space-x-2 items-center text-white space-x-4 rounded-full">
+                            <img :src="social['image']" class="w-8 h-8 fill-current absolute left-4 invert" alt="">
+                            <span class="text-center">{{social['name']}}</span>
                         </a>
                     </div>
                 </section>
@@ -60,23 +60,25 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
                             </svg>
                         </div>
-                        <template v-if="showingPortfolio">
-                            <a :href="project['url']" v-for="project in jsonPortFolio['projects']" :key="project" class="w-full max-w-lg p-6 flex flex-col mx-auto">
-                                <div class="flex-1 bg-custom-500 hover:bg-custom-600 rounded-xl overflow-hidden shadow-md py-10">
-                                    <div class="flex flex-wrap no-underline hover:no-underline space-y-4">
-                                        <p class="mx-auto text-gray-800 rounded-lg bg-gray-200 text-xs md:text-sm px-4">
-                                            {{project['languaje']}}
-                                        </p>
-                                        <div class="w-full font-bold text-xl text-white px-6">
-                                            {{project['title']}}
+                        <TransitionGroup>
+                            <template v-if="showingPortfolio">
+                                <a :href="project['url']" v-for="project in jsonPortFolio['projects']" :key="project" class="w-full max-w-lg p-6 flex flex-col mx-auto">
+                                    <div class="flex-1 bg-custom-500 hover:bg-custom-600 rounded-xl overflow-hidden shadow-md py-10">
+                                        <div class="flex flex-wrap no-underline hover:no-underline space-y-4">
+                                            <p class="mx-auto text-gray-800 rounded-lg bg-gray-200 text-xs md:text-sm px-4">
+                                                {{project['languaje']}}
+                                            </p>
+                                            <div class="w-full font-bold text-xl text-white px-6">
+                                                {{project['title']}}
+                                            </div>
+                                            <p class="text-gray-200 text-sm px-6 mb-2">
+                                                {{project['description']}}
+                                            </p>
                                         </div>
-                                        <p class="text-gray-200 text-sm px-6 mb-2">
-                                            {{project['description']}}
-                                        </p>
                                     </div>
-                                </div>
-                            </a>
-                        </template>
+                                </a>
+                            </template>
+                        </TransitionGroup>
                     </div>
                 </section>
                 <!-- About me -->
@@ -91,30 +93,32 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
                             </svg>
                         </div>
-                        <div v-show="showingAbout">
-                            <div class="flex flex-wrap my-2">
-                                <div class="w-5/6 p-6 m-auto">
-                                    <h3 class="text-xl text-gray-800 font-bold leading-none mb-3">
-                                        {{jsonAbout['studies-title']}}
-                                    </h3>
-                                    <div class="text-gray-600 text-left space-y-4">
-                                        <li v-for="l in jsonAbout['l']" :key="l">
-                                            {{l}}
-                                        </li>
+                        <Transition>
+                            <div v-show="showingAbout">
+                                <div class="flex flex-wrap my-2">
+                                    <div class="w-5/6 p-6 m-auto">
+                                        <h3 class="text-xl text-gray-800 font-bold leading-none mb-3">
+                                            {{jsonAbout['studies-title']}}
+                                        </h3>
+                                        <div class="text-gray-600 text-left space-y-4">
+                                            <li v-for="l in jsonAbout['l']" :key="l">
+                                                {{l}}
+                                            </li>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap my-2">
+                                    <div class="w-full p-6 m-auto">
+                                        <h3 class="text-xl text-gray-800 font-bold leading-none mb-3">
+                                            {{jsonInterest['title']}}
+                                        </h3>
+                                        <div class="bg-black px-6 text-gray-100 rounded-xl h-96 flex items-center justify-center sm:h-50 text-left">
+                                            <code class="skills-typed"></code>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex flex-wrap my-2">
-                                <div class="w-full p-6 m-auto">
-                                    <h3 class="text-xl text-gray-800 font-bold leading-none mb-3">
-                                        {{jsonInterest['title']}}
-                                    </h3>
-                                    <div class="bg-black px-6 text-gray-100 rounded-xl h-96 flex items-center justify-center sm:h-50 text-left">
-                                        <code class="skills-typed"></code>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </Transition>
                     </div>
                 </section>
             </template>
@@ -212,7 +216,7 @@ export default {
         this.titleTyped()
         this.skillsTyped()
         
-        var scrollpos = window.scrollY;
+        /* var scrollpos = window.scrollY;
         var header = document.getElementById("header");
         var navcontent = document.getElementById("nav-content");
         var navaction = document.getElementById("navAction");
@@ -249,7 +253,18 @@ export default {
                 navcontent.classList.remove("bg-white");
                 navcontent.classList.add("bg-gray-100");
             }
-        })
+        }) */
     }
 }
 </script>
+<style>
+    .v-enter-active,
+    .v-leave-active {
+        transition: opacity 0.5s ease;
+    }
+
+    .v-enter-from,
+    .v-leave-to {
+        opacity: 0;
+    }
+</style>
