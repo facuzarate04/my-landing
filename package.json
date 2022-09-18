@@ -1,5 +1,6 @@
 {
   "name": "my-landing",
+  "author": "Facundo Zarate",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -9,11 +10,14 @@
     "serve": "npm run build && vite preview"
   },
   "dependencies": {
+    "aos": "^3.0.0-beta.6",
+    "swiper": "^8.4.2",
     "typed.js": "^2.0.12",
     "vue": "^3.2.25",
     "vue-router": "^4.0.14"
   },
   "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.2",
     "@vitejs/plugin-vue": "^2.2.0",
     "autoprefixer": "^10.4.2",
     "postcss": "^8.4.7",

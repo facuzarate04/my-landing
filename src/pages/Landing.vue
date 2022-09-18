@@ -8,7 +8,6 @@
                 <!--Intro-->
                 <div ref="inicio" class="py-12">
                     <div class="container md:pt-12 px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-                        <!--Left Col-->
                         <div class="w-full mx-auto justify-center items-start text-center">
                             <h1 class="my-4 text-4xl font-bold leading-tight">
                                 <span class="title-typed"></span>
@@ -46,24 +45,37 @@
                             <img :src="social['image']" class="w-8 h-8 fill-current absolute left-4 invert" alt="">
                             <span class="text-center">{{social['name']}}</span>
                         </a>
+                        <a href="/Resume.pdf" target="_blank"
+                            class="my-2 bg-custom-500 relative w-full py-2 md:py-3 font-semibold flex justify-center space-x-2 items-center text-white space-x-4 rounded-full">
+                            <span class="text-center">Resume</span>
+                        </a>
                     </div>
                 </section>
                 <!-- Portfolio -->
-                <section class="bg-white py-4 px-10" ref="portfolio">
-                    <div class="container mx-auto flex flex-wrap pt-4 pb-4 rounded-xl border-2 max-w-xl">
-                        <div @click="showingPortfolio = !showingPortfolio" class="w-full flex items-center justify-between px-10 cursor-pointer my-2 font-bold leading-tight text-center text-gray-800">
-                            <p class="text-3xl">{{jsonPortFolio['title']}}</p>
-                            <svg v-if="!showingPortfolio" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                            </svg>
-                            <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
-                            </svg>
-                        </div>
-                        <TransitionGroup>
-                            <template v-if="showingPortfolio">
-                                <a :href="project['url']" v-for="project in jsonPortFolio['projects']" :key="project" class="w-full max-w-lg p-6 flex flex-col mx-auto">
-                                    <div class="flex-1 bg-custom-500 hover:bg-custom-600 rounded-xl overflow-hidden shadow-md py-10">
+                <section class="bg-white py-10 px-10" ref="portfolio">
+                    <div
+                        data-aos="fade-up"
+                        data-aos-duration="1000"
+                        data-aos-once="true">
+                        <h4 class="text-3xl font-bold text-black">{{jsonPortFolio['title']}}</h4>
+                        <Swiper
+                            :autoplay="{
+                                delay: 3000,
+                                disableOnInteraction: false,
+                            }"
+                            :modules="modules"
+                            :pagination="{
+                                dynamicBullets: true,
+                            }"
+                            :effect="'cards'"
+                            class="mySwiper max-w-lg py-10"
+                        >
+                            <SwiperSlide
+                                v-for="project in jsonPortFolio['projects']" 
+                                :key="project"
+                            >
+                                <a :href="project['url']" target="_blank">
+                                    <div class="w-full bg-custom-500 hover:bg-custom-600 rounded-xl overflow-hidden shadow-md py-16">
                                         <div class="flex flex-wrap no-underline hover:no-underline space-y-4">
                                             <p class="mx-auto text-gray-800 rounded-lg bg-gray-200 text-xs md:text-sm px-4">
                                                 {{project['languaje']}}
@@ -71,54 +83,47 @@
                                             <div class="w-full font-bold text-xl text-white px-6">
                                                 {{project['title']}}
                                             </div>
-                                            <p class="text-gray-200 text-sm px-6 mb-2">
+                                            <p class="text-gray-200 text-sm px-6 mb-2 line-clamp-4">
                                                 {{project['description']}}
                                             </p>
                                         </div>
                                     </div>
                                 </a>
-                            </template>
-                        </TransitionGroup>
+                            </SwiperSlide>
+                        </Swiper>
                     </div>
                 </section>
                 <!-- About me -->
-                <section class="bg-white py-4 pb-10 px-10" ref="about" >
-                    <div class="container mx-auto flex flex-wrap pt-4 pb-4 rounded-xl border-2 max-w-xl">
-                        <div @click="showingAbout = !showingAbout" class="w-full flex items-center justify-between px-10 cursor-pointer my-2 font-bold leading-tight text-center text-gray-800">
-                            <p class="text-3xl">{{jsonAbout['title']}}</p>
-                            <svg v-if="!showingAbout" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                            </svg>
-                            <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
-                            </svg>
-                        </div>
-                        <Transition>
-                            <div v-show="showingAbout">
-                                <div class="flex flex-wrap my-2">
-                                    <div class="w-5/6 p-6 m-auto">
-                                        <h3 class="text-xl text-gray-800 font-bold leading-none mb-3">
-                                            {{jsonAbout['studies-title']}}
-                                        </h3>
-                                        <div class="text-gray-600 text-left space-y-4">
-                                            <li v-for="l in jsonAbout['l']" :key="l">
-                                                {{l}}
-                                            </li>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex flex-wrap my-2">
-                                    <div class="w-full p-6 m-auto">
-                                        <h3 class="text-xl text-gray-800 font-bold leading-none mb-3">
-                                            {{jsonInterest['title']}}
-                                        </h3>
-                                        <div class="bg-black px-6 text-gray-100 rounded-xl h-96 flex items-center justify-center sm:h-50 text-left">
-                                            <code class="skills-typed"></code>
-                                        </div>
+                <section class="bg-white py-4 pb-10 px-10" ref="about">
+                    <div class="mx-auto"
+                        data-aos="fade-up"
+                        data-aos-duration="1000"
+                        data-aos-once="true">
+                        <h4 class="font-bold text-black text-3xl">{{jsonAbout['title']}}</h4>
+                        <div class="max-w-xl mx-auto">
+                            <div class="flex flex-wrap my-2">
+                                <div class="w-5/6 p-6 m-auto">
+                                    <h3 class="text-xl text-gray-800 font-bold leading-none mb-3">
+                                        {{jsonAbout['studies-title']}}
+                                    </h3>
+                                    <div class="text-gray-600 text-left space-y-4">
+                                        <li v-for="l in jsonAbout['l']" :key="l">
+                                            {{l}}
+                                        </li>
                                     </div>
                                 </div>
                             </div>
-                        </Transition>
+                            <div class="flex flex-wrap my-2">
+                                <div class="w-full p-6 m-auto">
+                                    <h3 class="text-xl text-gray-800 font-bold leading-none mb-3">
+                                        {{jsonInterest['title']}}
+                                    </h3>
+                                    <div class="bg-black px-6 text-gray-100 rounded-xl h-96 flex items-center justify-center sm:h-50 text-left">
+                                        <code class="skills-typed"></code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </template>
@@ -155,6 +160,16 @@ import json from '../../public/json/text.json'
 import GuestLayout from '../layouts/GuestLayout.vue'
 import NavBar from '../components/NavBar.vue'
 import Typed from 'typed.js';
+import AOS from 'aos';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay, EffectCards, Pagination } from "swiper";
+
+import 'aos/dist/aos.css';
+import 'swiper/css';
+import "swiper/css/effect-cards";
+import "swiper/css/pagination";
+
+
 export default {
     data() {
         return {
@@ -166,13 +181,17 @@ export default {
             jsonSocials: json['socials'],
             showingPortfolio: false,
             showingAbout: false,
+            modules: [Autoplay, EffectCards, Pagination],
         }
     },
     components: {
         GuestLayout,
-        NavBar
+        NavBar,
+        Swiper,
+        SwiperSlide,
     },
     methods: {
+        
         scrollTo: function(ref) {
             this.$refs[ref].scrollIntoView({behavior: 'smooth'})
         },
@@ -212,59 +231,9 @@ export default {
         }
     },
     mounted() {
-
-        this.titleTyped()
-        this.skillsTyped()
-        
-        /* var scrollpos = window.scrollY;
-        var header = document.getElementById("header");
-        var navcontent = document.getElementById("nav-content");
-        var navaction = document.getElementById("navAction");
-        var toToggle = document.querySelectorAll(".toggleColour");
-        window.addEventListener('scroll', (e) => {
-            scrollpos = window.scrollY;
-            if (scrollpos > 10) {
-                header.classList.add("bg-gray-800");
-                navaction.classList.remove("bg-white");
-                navaction.classList.add("gradient");
-                navaction.classList.remove("text-gray-800");
-                navaction.classList.add("text-white");
-                //Use to switch toggleColour colours
-                for (var i = 0; i < toToggle.length; i++) {
-                    toToggle[i].classList.add("text-gray-800");
-                    toToggle[i].classList.remove("text-white");
-                }
-                header.classList.add("shadow");
-                navcontent.classList.remove("bg-gray-100");
-                navcontent.classList.add("bg-white");
-            } else {
-                header.classList.remove("bg-gray-800");
-                navaction.classList.remove("gradient");
-                navaction.classList.add("bg-white");
-                navaction.classList.remove("text-white");
-                navaction.classList.add("text-gray-800");
-                //Use to switch toggleColour colours
-                for (var i = 0; i < toToggle.length; i++) {
-                    toToggle[i].classList.add("text-white");
-                    toToggle[i].classList.remove("text-gray-800");
-                }
-
-                header.classList.remove("shadow");
-                navcontent.classList.remove("bg-white");
-                navcontent.classList.add("bg-gray-100");
-            }
-        }) */
+        this.titleTyped();
+        this.skillsTyped();
+        AOS.init();
     }
 }
 </script>
-<style>
-    .v-enter-active,
-    .v-leave-active {
-        transition: opacity 0.5s ease;
-    }
-
-    .v-enter-from,
-    .v-leave-to {
-        opacity: 0;
-    }
-</style>
