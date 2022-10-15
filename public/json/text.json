@@ -29,32 +29,85 @@
                 "languaje": "JavaScript / VueJS",
                 "title": "Landing Page Web Full Responsive",
                 "description": "Este proyecto fue desarrollado con el objetivo de mostrar principalmente algunas de mis características, como también plasmar algunas prácticas visibles del desarrollo e implementación web client-side.",
-                "url": "https://github.com/facuzarate04/my-landing"
+                "url": "https://github.com/facuzarate04/my-landing",
+                "technologies": ["HTML5", "CSS3", "JavaScript", "VueJS", "TailwindCSS"]
             },
             "p2": {
+                "languaje": "Typescript / ExpressJS",
+                "title": "Mailing microservice",
+                "description": "Microservicio que se encarga de enviar correos electrónicos a través de una interfaz REST.",
+                "url": "https://github.com/facuzarate04/mailing-ms",
+                "technologies": ["Docker", "NodeJS", "ExpressJS", "Typescript", "Redis"]
+            },
+            "p3": {
                 "languaje": "Python / Flask",
                 "title": "API Info Dollar",
                 "description": "API desarrollada en Python haciendo uso de Flask para scrapear una web y obtener información que consulto de forma habitual para conocer el precio del dollar en mi ciudad natal. Esta API es consumida por un proyecto personal en una Skill de Amazon Alexa.",
-                "url": "https://github.com/facuzarate04/info-dollar-api"
+                "url": "https://github.com/facuzarate04/info-dollar-api",
+                "technologies": ["Python", "Flask"]
             },
-            "p3": {
+            "p4": {
                 "languaje": "PHP / Laravel",
                 "title": "E-Shop API",
                 "description": "E-Commerce API encargada de manejar la información, lógica de negocio y sesiones de los clientes que se realizan peticiones desde el SPA project realizado en VueJs.",
-                "url": "https://github.com/facuzarate04/eshop-api"
+                "url": "https://github.com/facuzarate04/eshop-api",
+                "technologies": ["PHP", "Laravel", "MySQL", "Docker", "MySQL"]
             },
-            "p4": {
+            "p5": {
                 "languaje": "JavaScript / VueJS",
                 "title": "E-Shop Web SPA",
                 "description": "E-Commerce SPA que consume la API realizada en Laravel para realizar ordenes de compra con distintos productos, cantidades y métodos de pagos.",
-                "url": "https://github.com/facuzarate04/eshop-client"
+                "url": "https://github.com/facuzarate04/eshop-client",
+                "technologies": ["HTML5", "CSS3", "JavaScript", "VueJS", "TailwindCSS"]
             }
         }
           
     },
-    "interest":{
+    "skills":{
         "title": "Skills",
-        "image": "../assets/images/drumms.png"
+        "skills": {
+            "1": {
+                "name": "Docker",
+                "image": "../assets/skills/docker.svg"
+            },
+            "2": {
+                "name": "Kubernetes",
+                "image": "../assets/skills/kubernetes.svg"
+            },
+            "3": {
+                "name": "AWS",
+                "image": "../assets/skills/aws.svg"
+            },
+            "4": {
+                "name": "Typescript",
+                "image": "../assets/skills/typescript.svg"
+            },
+            "5": {
+                "name": "NodeJS",
+                "image": "../assets/skills/nodejs.svg"
+            },
+            "6": {
+                "name": "PHP",
+                "image": "../assets/skills/php.svg"
+            },
+            "7": {
+                "name": "JavaScript",
+                "image": "../assets/skills/javascript.svg"
+            },
+            "8": {
+                "name": "Python",
+                "image": "../assets/skills/python.svg"
+            },
+            "9": {
+                "name": "Redis",
+                "image": "../assets/skills/redis.svg"
+            },
+            "10": {
+                "name": "MySQL",
+                "image": "../assets/skills/mysql.svg"
+            }
+            
+        }
     },
     "socials":{
         "gh": {

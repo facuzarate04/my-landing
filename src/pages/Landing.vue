@@ -1,9 +1,6 @@
 <template>
     <div>
         <GuestLayout>
-            <!-- <template #navbar>
-                <NavBar @scrollTo="scrollTo"/>
-            </template> -->
             <template #content>
                 <!--Intro-->
                 <div ref="inicio" class="py-12">
@@ -47,6 +44,9 @@
                         </a>
                         <a href="/Resume.pdf" target="_blank"
                             class="my-2 bg-custom-500 relative w-full py-2 md:py-3 font-semibold flex justify-center space-x-2 items-center text-white space-x-4 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 absolute left-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                            </svg>
                             <span class="text-center">Resume</span>
                         </a>
                     </div>
@@ -61,17 +61,18 @@
                         <Swiper
                             :autoplay="{
                                 delay: 3000,
-                                disableOnInteraction: false,
+                                disableOnInteraction: true,
                             }"
                             :modules="modules"
                             :pagination="{
                                 dynamicBullets: true,
                             }"
+                            :navigation="true"
                             :effect="'cards'"
-                            class="mySwiper max-w-lg py-10"
+                            class="mySwiper md:max-w-3xl py-10 px-5 md:px-24"
                         >
                             <SwiperSlide
-                                v-for="project in jsonPortFolio['projects']" 
+                                v-for="project in jsonPortFolio['projects']"
                                 :key="project"
                             >
                                 <a :href="project['url']" target="_blank">
@@ -93,36 +94,15 @@
                         </Swiper>
                     </div>
                 </section>
-                <!-- About me -->
-                <section class="bg-white py-4 pb-10 px-10" ref="about">
+                <!-- Skills -->
+                <section class="bg-white py-4 pb-10 px-10" ref="skills">
                     <div class="mx-auto"
                         data-aos="fade-up"
                         data-aos-duration="1000"
                         data-aos-once="true">
-                        <h4 class="font-bold text-black text-3xl">{{jsonAbout['title']}}</h4>
-                        <div class="max-w-xl mx-auto">
-                            <div class="flex flex-wrap my-2">
-                                <div class="w-5/6 p-6 m-auto">
-                                    <h3 class="text-xl text-gray-800 font-bold leading-none mb-3">
-                                        {{jsonAbout['studies-title']}}
-                                    </h3>
-                                    <div class="text-gray-600 text-left space-y-4">
-                                        <li v-for="l in jsonAbout['l']" :key="l">
-                                            {{l}}
-                                        </li>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap my-2">
-                                <div class="w-full p-6 m-auto">
-                                    <h3 class="text-xl text-gray-800 font-bold leading-none mb-3">
-                                        {{jsonInterest['title']}}
-                                    </h3>
-                                    <div class="bg-black px-6 text-gray-100 rounded-xl h-96 flex items-center justify-center sm:h-50 text-left">
-                                        <code class="skills-typed"></code>
-                                    </div>
-                                </div>
-                            </div>
+                        <h4 class="font-bold text-black text-3xl">{{jsonSkills['title']}}</h4>
+                        <div class="max-w-xl mx-auto  py-10">
+                            <Skills :skills="jsonSkills['skills']" :projects="jsonPortFolio['projects']" />
                         </div>
                     </div>
                 </section>
@@ -156,18 +136,20 @@
 </template>
 
 <script>
-import json from '../../public/json/text.json'
-import GuestLayout from '../layouts/GuestLayout.vue'
-import NavBar from '../components/NavBar.vue'
+import json from '/public/json/text.json'
+import GuestLayout from '@/layouts/GuestLayout.vue'
+import NavBar from '@/components/NavBar.vue'
+import Skills from '@/components/Skills.vue'
 import Typed from 'typed.js';
 import AOS from 'aos';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Autoplay, EffectCards, Pagination } from "swiper";
+import { Autoplay, EffectCards, Navigation, Pagination } from "swiper";
 
 import 'aos/dist/aos.css';
 import 'swiper/css';
 import "swiper/css/effect-cards";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 
 export default {
@@ -175,18 +157,18 @@ export default {
         return {
             jsonDescription: json['description'],
             jsonAbout: json['about'],
-            jsonInterest: json['interest'],
             jsonSkills: json['skills'],
             jsonPortFolio: json['portfolio'],
             jsonSocials: json['socials'],
             showingPortfolio: false,
             showingAbout: false,
-            modules: [Autoplay, EffectCards, Pagination],
+            modules: [Autoplay, EffectCards, Pagination, Navigation],
         }
     },
     components: {
         GuestLayout,
         NavBar,
+        Skills,
         Swiper,
         SwiperSlide,
     },
@@ -210,30 +192,34 @@ export default {
                 loopCount: Infinity,
             };
 
-            var titleTyped = new Typed('.title-typed', titleOptions);
-        },
-        skillsTyped() {
-            var skillsOptions = {
-                strings: [
-                    `let skillsArr = [<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'JavaScript'</b>, tools: [<b>'VueJS'</b>, <b>'ExpressJS'</b>]},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'PHP'</b>, tools: <b>'Laravel'</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'Python'</b>, tools: <b>'Flask'</b>},<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'SQL'</b>, tools: [<b>'MySQL'</b>, <b>'PostgreSQL'</b>]},<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'NoSQL'</b>, tools: <b>MongoDB</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'Docker</b>', tools: <b>null</b>},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{name: <b>'AWS'</b>, tools: <b>null</b>}<br>];`,
-                ],
-                typeSpeed: 1,
-                backSpeed: 1,
-                backDelay: 10000,
-                smartBackspace: false,
-                loop: true,
-                loopCount: Infinity,
-                contentType: 'html',
-                showCursor: false,
-            };
-
-            var skillsTyped = new Typed('.skills-typed', skillsOptions);
+            new Typed('.title-typed', titleOptions);
         }
     },
     mounted() {
         this.titleTyped();
-        this.skillsTyped();
         AOS.init();
     }
 }
 </script>
+
+<style>
+.swiper-button-prev,
+.swiper-button-next {
+    display: none;
+    color: #235061;
+    font-weight: 800;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: flex;
+    }
+}
+
+</style>
