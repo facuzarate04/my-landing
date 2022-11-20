@@ -35,25 +35,32 @@
             "p2": {
                 "languaje": "Typescript / ExpressJS",
                 "title": "Mailing microservice",
-                "description": "Microservicio que se encarga de enviar correos electrónicos a través de una interfaz REST.",
+                "description": "Microservicio que se encarga de enviar correos electrónicos a través de una interfaz async utilizando RabbitMQ.",
                 "url": "https://github.com/facuzarate04/mailing-ms",
-                "technologies": ["Docker", "NodeJS", "ExpressJS", "Typescript", "Redis"]
+                "technologies": ["Docker", "NodeJS", "ExpressJS", "Typescript", "Redis", "RabbitMQ"]
             },
             "p3": {
+                "languaje": "Typescript / ExpressJS",
+                "title": "Event tracker microservice",
+                "description": "Microservicio que se encarga trackear eventos través de una interfaz REST.",
+                "url": "https://github.com/facuzarate04/event-tracker-ms",
+                "technologies": ["Docker", "NodeJS", "ExpressJS", "Typescript", "MongoDB"]
+            },
+            "p4": {
                 "languaje": "Python / Flask",
                 "title": "API Info Dollar",
                 "description": "API desarrollada en Python haciendo uso de Flask para scrapear una web y obtener información que consulto de forma habitual para conocer el precio del dollar en mi ciudad natal. Esta API es consumida por un proyecto personal en una Skill de Amazon Alexa.",
                 "url": "https://github.com/facuzarate04/info-dollar-api",
                 "technologies": ["Python", "Flask"]
             },
-            "p4": {
+            "p5": {
                 "languaje": "PHP / Laravel",
                 "title": "E-Shop API",
                 "description": "E-Commerce API encargada de manejar la información, lógica de negocio y sesiones de los clientes que se realizan peticiones desde el SPA project realizado en VueJs.",
                 "url": "https://github.com/facuzarate04/eshop-api",
                 "technologies": ["PHP", "Laravel", "MySQL", "Docker", "MySQL"]
             },
-            "p5": {
+            "p6": {
                 "languaje": "JavaScript / VueJS",
                 "title": "E-Shop Web SPA",
                 "description": "E-Commerce SPA que consume la API realizada en Laravel para realizar ordenes de compra con distintos productos, cantidades y métodos de pagos.",
@@ -73,10 +80,6 @@
             "2": {
                 "name": "Kubernetes",
                 "image": "../assets/skills/kubernetes.svg"
-            },
-            "3": {
-                "name": "AWS",
-                "image": "../assets/skills/aws.svg"
             },
             "4": {
                 "name": "Typescript",
@@ -103,8 +106,16 @@
                 "image": "../assets/skills/redis.svg"
             },
             "10": {
+                "name": "RabbitMQ",
+                "image": "../assets/skills/rabbitmq.svg"
+            },
+            "11": {
                 "name": "MySQL",
                 "image": "../assets/skills/mysql.svg"
+            },
+            "12": {
+                "name": "MongoDB",
+                "image": "../assets/skills/mongodb.svg"
             }
             
         }
