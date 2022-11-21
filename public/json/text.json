@@ -28,7 +28,7 @@
             "p1": {
                 "languaje": "JavaScript / VueJS",
                 "title": "Landing Page Web Full Responsive",
-                "description": "Este proyecto fue desarrollado con el objetivo de mostrar principalmente algunas de mis características, como también plasmar algunas prácticas visibles del desarrollo e implementación web client-side.",
+                "description": "Este proyecto fue desarrollado con el objetivo de plasmar algunas prácticas visibles del desarrollo e implementación web client-side.",
                 "url": "https://github.com/facuzarate04/my-landing",
                 "technologies": ["HTML5", "CSS3", "JavaScript", "VueJS", "TailwindCSS"]
             },
