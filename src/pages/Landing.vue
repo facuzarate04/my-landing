@@ -122,12 +122,12 @@
                     </svg>
                     <section class="container mx-auto text-center p-4">
                         <h3 class="my-4 text-3xl leading-tight">
-                            ¡Gracias por visitar mi página personal!
+                            Thanks for visiting!
                         </h3>
                         <button
                             @click="scrollTo('inicio')" 
                             class="link mx-auto lg:mx-0 bg-white text-gray-800 font-bold rounded-full my-6 py-2 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                            Subir
+                            Back to top
                         </button>
                     </section>
                 </template>
