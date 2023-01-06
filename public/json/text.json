@@ -26,11 +26,11 @@
         "subtitle": "En esta sección se encuentran algunos de los últimos proyectos que he realizado.",
         "projects": {
             "p1": {
-                "languaje": "JavaScript / VueJS",
-                "title": "Landing Page Web Full Responsive",
-                "description": "This project was developed with the objective of capturing some visible practices of client-side web development and implementation.",
-                "url": "https://github.com/facuzarate04/my-landing",
-                "technologies": ["HTML5", "CSS3", "JavaScript", "VueJS", "TailwindCSS"]
+                "languaje": "Laravel / VueJS / InertiaJS",
+                "title": "Page Builder",
+                "description": "Monolithic page-builder application where users can create their custom landing page and have their own endpoint with their.",
+                "url": "https://github.com/facuzarate04/page-builder-pwa",
+                "technologies": ["PHP", "JavaScript", "InertiaJS", "VueJS", "Docker", "Redis", "MySQL", "Laravel"]
             },
             "p2": {
                 "languaje": "Typescript / ExpressJS",
@@ -82,16 +82,16 @@
                 "image": "../assets/skills/kubernetes.svg"
             },
             "4": {
+                "name": "PHP",
+                "image": "../assets/skills/php.svg"
+            },
+            "5": {
                 "name": "Typescript",
                 "image": "../assets/skills/typescript.svg"
             },
-            "5": {
+            "6": {
                 "name": "NodeJS",
                 "image": "../assets/skills/nodejs.svg"
-            },
-            "6": {
-                "name": "PHP",
-                "image": "../assets/skills/php.svg"
             },
             "7": {
                 "name": "JavaScript",
