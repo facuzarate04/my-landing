@@ -60,7 +60,7 @@
                         <h4 class="text-3xl font-bold text-black">{{jsonPortFolio['title']}}</h4>
                         <Swiper
                             :autoplay="{
-                                delay: 3000,
+                                delay: 5000,
                                 disableOnInteraction: true,
                             }"
                             :modules="modules"

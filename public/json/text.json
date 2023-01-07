@@ -29,7 +29,7 @@
                 "languaje": "Laravel / VueJS / InertiaJS",
                 "title": "Page Builder",
                 "description": "Monolithic page-builder application where users can create their custom landing page and have their own endpoint with their.",
-                "url": "https://github.com/facuzarate04/page-builder-pwa",
+                "url": "https://github.com/facuzarate04/page-builder-app",
                 "technologies": ["PHP", "JavaScript", "InertiaJS", "VueJS", "Docker", "Redis", "MySQL", "Laravel"]
             },
             "p2": {
