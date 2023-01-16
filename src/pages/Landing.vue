@@ -77,7 +77,9 @@
                                 v-for="project in jsonPortFolio['projects']"
                                 :key="project"
                             >
-                                <a :href="project['url']" target="_blank">
+                                <a :href="project['url']" target="_blank"
+                                    @click="projectEvent(project)"
+                                >
                                     <div class="w-full bg-custom-500 hover:bg-custom-600 rounded-xl overflow-hidden shadow-md py-16">
                                         <div class="flex flex-wrap no-underline hover:no-underline space-y-4">
                                             <p class="mx-auto text-gray-800 rounded-lg bg-gray-200 text-xs md:text-sm px-4">
@@ -178,6 +180,12 @@ export default {
         socialEvent(socialName) {
             gtag('event', 'social_click', {
                 'social_name': socialName
+            });
+        },
+        projectEvent(project) {
+            gtag('event', 'project_click', {
+                'project_name': project['name'],
+                'project_url': project['url'],
             });
         },
         scrollTo: function(ref) {
