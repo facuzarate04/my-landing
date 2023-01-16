@@ -38,7 +38,9 @@
                     <div class="py-10 px-20 text-center flex flex-col space-y-4 max-w-lg mx-auto">
                         <a target="_blank" v-for="social in jsonSocials" :key="social" :href="social['url']"
                             :style="social['color']"
-                            class="my-2 relative w-full py-2 md:py-3 font-semibold flex justify-center space-x-2 items-center text-white space-x-4 rounded-full">
+                            class="my-2 relative w-full py-2 md:py-3 font-semibold flex justify-center space-x-2 items-center text-white space-x-4 rounded-full"
+                            @click="socialEvent(social['name'])"
+                        >
                             <img :src="social['image']" class="w-8 h-8 fill-current absolute left-4 invert" alt="">
                             <span class="text-center">{{social['name']}}</span>
                         </a>
@@ -173,7 +175,11 @@ export default {
         SwiperSlide,
     },
     methods: {
-        
+        socialEvent(socialName) {
+            gtag('event', 'social_click', {
+                'social_name': socialName
+            });
+        },
         scrollTo: function(ref) {
             this.$refs[ref].scrollIntoView({behavior: 'smooth'})
         },
