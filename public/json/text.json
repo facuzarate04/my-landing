@@ -26,41 +26,48 @@
         "subtitle": "En esta sección se encuentran algunos de los últimos proyectos que he realizado.",
         "projects": {
             "p1": {
+                "languaje": "Typescript / ExpressJS",
+                "title": "Media content microservice",
+                "description": "This microservice is a cutting-edge and versatile microservice dedicated to handling media content in your applications. Whether you're developing a web application, mobile app, or any digital platform that relies on multimedia content.",
+                "url": "https://github.com/facuzarate04/media-ms",
+                "technologies": ["Docker", "NodeJS", "ExpressJS", "Typescript", "AWS-S3"]
+            },
+            "p2": {
                 "languaje": "Laravel / VueJS / InertiaJS",
                 "title": "Page Builder",
                 "description": "Monolithic page-builder application where users can create their custom landing page and have their own endpoint with their.",
                 "url": "https://github.com/facuzarate04/page-builder-app",
                 "technologies": ["PHP", "JavaScript", "InertiaJS", "VueJS", "Docker", "Redis", "MySQL", "Laravel"]
             },
-            "p2": {
+            "p3": {
                 "languaje": "Typescript / ExpressJS",
                 "title": "Mailing microservice",
                 "description": "Microservice that takes care of sending e-mails through an async interface using RabbitMQ. And interacts with admin roles via a REST interface.",
                 "url": "https://github.com/facuzarate04/mailing-ms",
                 "technologies": ["Docker", "NodeJS", "ExpressJS", "Typescript", "Redis", "RabbitMQ"]
             },
-            "p3": {
+            "p4": {
                 "languaje": "Typescript / ExpressJS",
                 "title": "Event tracker microservice",
                 "description": "Microservice that tracks events through a REST interface.",
                 "url": "https://github.com/facuzarate04/event-tracker-ms",
                 "technologies": ["Docker", "NodeJS", "ExpressJS", "Typescript", "MongoDB"]
             },
-            "p4": {
+            "p5": {
                 "languaje": "Python / Flask",
                 "title": "API Info Dollar",
                 "description": "API developed in Python using Flask to scrape a web and get information that I regularly consult to know the price of the dollar in my hometown. This API is consumed by a personal project in an Amazon Alexa Skill.",
                 "url": "https://github.com/facuzarate04/info-dollar-api",
                 "technologies": ["Python", "Flask"]
             },
-            "p5": {
+            "p6": {
                 "languaje": "PHP / Laravel",
                 "title": "E-Shop API",
                 "description": "E-Commerce API in charge of handling the information, business logic and sessions of the clients that make requests from the SPA project made in VueJs.",
                 "url": "https://github.com/facuzarate04/eshop-api",
                 "technologies": ["PHP", "Laravel", "MySQL", "Docker", "MySQL"]
             },
-            "p6": {
+            "p7": {
                 "languaje": "JavaScript / VueJS",
                 "title": "E-Shop Web SPA",
                 "description": "E-Commerce SPA that interacts with the API made in Laravel to make purchase orders with different products, quantities and payment methods.",
